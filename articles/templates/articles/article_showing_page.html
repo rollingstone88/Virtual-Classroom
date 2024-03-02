@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    <link rel="stylesheet" href="/static/styles/classroom_details.css">
+    <link rel="stylesheet" href="/static/styles/assignment_article_details.css">
+    <link rel="stylesheet" href="/static/styles/Assignments_list.css">
+
+    {% if classroom.assignments.count == 0 %}
+        <h2>No article in this classroom yet!</h2>
+    {% else %}
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mt-3">
+                        <ul class="list list-inline">
+                            <span class="m-lg-2"><h1>Accepted Articles:</h1></span>
+                            {% for article in articles %}
+                                {% if article.classroom.code == classroom_code and article.is_accepted == True %}
+                                    <!--sss -->
+                                    <a href="{% url 'article:article_view' pk=article.pk %}">
+                                        <li class="list-group-item d-flex justify-content-between align-content-center">
+                                            <div class="d-flex flex-row">
+                                                <div class="ml-2">
+                                                    <img src="/static/images/article_2.png" width="40" height=auto/>
+                                                    <span class="btn btn-lg btn-fill"><h2>{{ article.title }}</h2></span>
+                                                </div>
+                                                <div>
+                                                    <p >by {{ article.creator }}</p>
+                                                </div>
+                                                <div>
+                                                    <p>{{ article.assign_time }}</p>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                    </a>
+                                    <!-- sss -->
+
+
+
+
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+
+{% endblock %}

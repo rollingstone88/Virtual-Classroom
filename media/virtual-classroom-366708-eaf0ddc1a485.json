@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "virtual-classroom-366708",
+  "private_key_id": "eaf0ddc1a485248ea93b2b1d8dee4ea817a31e10",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCQZDkiNd6FwZEp\nDQmQgiwx8ghQxU304jKgX0jsEP92F4ci9UJWkRowozDrgr7sK1dAkG2vhQvuwsE2\nZ8lQVREw+5Bfv/zJzI/t8A/uIZh4mSpkC4p7wYZHdNtsdOo2RRPnX1KLxeBl2QDS\nptSHYm7B/Q5JnADRS/C6Ok47q65grIHKq1h1DIoeGvLe5os0wK6EkSWmJgMZwzB2\nhb2REG9kKV2ceUsI4OhLJkRcacCh4z7c+qupbozaNwUaq7QrnoS2GBWSA4HTRN6i\nGEhtcqlKqngXa0VK41GKsE+ifGOqTg0jeboW4Y+eFPw6c/iN1TeNZus59vH1jkSQ\ndXAr4rBrAgMBAAECggEAQb/Jfmj+P3UBlypPISUNX97g53q4wVphCELrT0d8NDeJ\neyMoRogDX4NoCs36B0vDCuzZbXPNl7bKSW5gLrrVvbLHrrobL379STEn590Xc073\njR/uOuVIMnClXBEu93BkHFb9HRWJVYdHhySdoVpyqdYD9APcIXINl5dmOWi3WmBz\n0yjiRiT7TkAKymDlTAUkdEQTmqszNOIOGQ3NcAV31heNN1iIWt6ApPelUyLOmP3T\nI202/6HzzwZmvwWBukclvqHMzg6X+lsizzORZA9TYQIR0kwGoAD9NowF3x+MOE9i\nVzJJLsRbtgqCuGpohW8MyBFE4FpNBgJBC75J+MtnEQKBgQDKdsBlDaW30fl6jcnJ\n3h9zvZWIjg0GHy+eBL2lFAwiCJWCPwzOt/6G1PFhhIjd/r/3RsG3xbXAKA0mqO8x\nGlNHeeGm5HHgpepWB2tZaBDQmwQX144Tl4btvnk+JLznZFYDBPLAJa18dWkYEgr/\nPDHZSGHsr3h1QHuYQx5kjHeEuwKBgQC2kmsBRl9rNHBHdIN/MhLXfNteYT4lf379\nCLgJektCZxLTtam83EaEEkmb46Aajp1ew26GdxTfKlYMq2OxleqkbAliMYN9/TcT\n6f3/nEloPO1x56dqwU7v5SIcsGMFQhuVLIasP1kEjP90hzVhPRaLO2yWUSnPpQZU\nDEDIXhqgEQKBgQCz1nmdCVtLBWsJrgowkmnzn9HEQxFUf70HKoTdrgn87Q0IbULO\nF+cxEtL54QTF07PmTGZj+20uqyTLU0Frp0uT8LI8USzJ8/ZLxjlXaDWPZjJjjyd3\nRaAna4o8ZduZ2akA85NAk/ce1xerttMn1esdasr4twBTfhyKqgvEGnVLYwKBgQCh\nLsT/nCRznhkeTJQnQIr36cg2G73lFxmCxSbNX0WAO0WY2UIgdYxf31FTKnPX3l67\nIei7F/i6SUMs7kcWqlc8kBD8ut/u5BWzJBrVhyIbv+aVcEIS8tUA4BbsoyDYrJNz\ncJr5CPhLFzwUoaYT0f3MMEtergsuwe/DVgn/m20AMQKBgQDDSOsS4Rp6M1dApvOd\n5ltcRH8bQ9xFvXtHn7ZPZUncjg2FQ5VcDjzr505OyUfZbPmY7dK1cJmw9PHieIK9\nnvTy5ALnkfOcluMV5XA1FVfIPCC2WZS94BXn8PtFUsYLuqpzqL8C3txyRCzsmuAj\nFPAnoWN7mwq9iK8Z2EV4BIxs8Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "virtual-classroom@virtual-classroom-366708.iam.gserviceaccount.com",
+  "client_id": "104028257001425793659",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/virtual-classroom%40virtual-classroom-366708.iam.gserviceaccount.com"
+}

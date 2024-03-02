@@ -1,0 +1,36 @@
+
+
+.list-group{
+	width: 1155px !important;
+    height: 20px;
+}
+
+.list-group-item{
+	margin-top:10px;
+	border-radius: none;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+
+.list-group-item:hover{
+	transform: scaleX(1.01);
+	background: #BDDBE0;
+}
+
+
+.about span{
+	font-size: 12px;
+	margin-right: 10px;
+}
+p.normal {
+  font-weight: normal;
+}
+
+p.thick {
+  font-weight: bold;
+}
+
+p.thicker {
+  font-weight: 900;
+}

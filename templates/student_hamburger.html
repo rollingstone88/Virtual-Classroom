@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" href="/static/styles/hamburger.css">
+
+<input type="checkbox" id="check">
+<label for="check">
+    <i id="btn"><img src="/static/images/hamburger.png" height="20" width=auto></i>
+    <i id="cancel"><img src="/static/images/close.png" height="15" width=auto></i>
+</label>
+
+<div class="sidebar ">
+    <header>
+        Dashboard
+    </header>
+    <ul>
+        <li><a href="{% url 'exam:view_exams_student' classroom.code %}">View Upcoming Exams</a></li>
+        <li><a href="{% url 'exam:view_previous_student' classroom.slug %}">View Previous Exams</a></li>
+        <li><a href="{% url 'exam:view_students_attendance' code=classroom.code %}">Attendance</a></li>
+    </ul>
+    </ul>
+</div>

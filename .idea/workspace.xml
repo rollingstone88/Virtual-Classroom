@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="76f0756a-619f-4584-a29e-8db5e7f9c9ce" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EcEI82HrIK1ntPNdpiZ1xemfzo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Python\RDBMS project\Real one will not change anymore\Virtual_Classroom\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Virtual_Classroom" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Virtual_Classroom" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76f0756a-619f-4584-a29e-8db5e7f9c9ce" name="Changes" comment="" />
+      <created>1662886389460</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662886389460</updated>
+      <workItem from="1662886406178" duration="2641000" />
+      <workItem from="1663062704023" duration="15664000" />
+      <workItem from="1665408340795" duration="2596000" />
+      <workItem from="1665411023619" duration="3264000" />
+      <workItem from="1665656738589" duration="8507000" />
+      <workItem from="1665728142207" duration="1336000" />
+      <workItem from="1665736090209" duration="2519000" />
+      <workItem from="1665739194370" duration="1473000" />
+      <workItem from="1666098309778" duration="19670000" />
+      <workItem from="1666283522526" duration="616000" />
+      <workItem from="1666372695433" duration="742000" />
+      <workItem from="1666677247520" duration="26792000" />
+      <workItem from="1666779556289" duration="9574000" />
+      <workItem from="1666864559090" duration="15139000" />
+      <workItem from="1666931827128" duration="9518000" />
+      <workItem from="1667616263105" duration="2459000" />
+      <workItem from="1667701040620" duration="4430000" />
+      <workItem from="1668083411507" duration="16965000" />
+      <workItem from="1668220126242" duration="15905000" />
+      <workItem from="1668271514059" duration="4200000" />
+      <workItem from="1668306060191" duration="2049000" />
+      <workItem from="1668308148618" duration="155000" />
+      <workItem from="1668308667427" duration="19497000" />
+      <workItem from="1669051731343" duration="60697000" />
+      <workItem from="1669173958395" duration="9946000" />
+      <workItem from="1669286842617" duration="17535000" />
+      <workItem from="1669342826313" duration="3057000" />
+      <workItem from="1669351419512" duration="7721000" />
+      <workItem from="1669367402153" duration="1080000" />
+      <workItem from="1670179107210" duration="621000" />
+      <workItem from="1671355098197" duration="10000" />
+      <workItem from="1671543160001" duration="1172000" />
+      <workItem from="1671547163555" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

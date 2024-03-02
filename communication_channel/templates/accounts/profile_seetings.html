@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="/static/styles/profile_view.css">
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <br><br><br><br><br>
+                                    <div class="m-b-25">
+                                        <img src="/media/{{ myUser.profile.profile_pic }}" onerror="this.onerror=null; this.src='/static/images/default_user_profilepic_icon.png'"
+                                             class="img-radius" alt="User-Profile-Image" width="170" height="170">
+                                    </div>
+                                    <h3 class="m-b-10 f-w-600">{{ myUser }}</h3>
+                                    <br>
+                                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                </div>
+                                <br><br><br>
+                            </div>
+                            <form action="{% url 'accounts:update_profile' pk=myUser.pk %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">
+                                        Information</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">First Name</p>
+                                                <input name="first_name" type="text" class="form-control" placeholder="first name" value="{{ myUser.first_name }}">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Last Name</p>
+                                            <input name="last_name" type="text" class="form-control" placeholder="first name" value="{{ myUser.last_name }}">
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-10 m-t-20 p-b-5 b-b-default f-w-600">
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Date of Birth</p>
+                                                <input name="dob" type="date" class="form-control" placeholder="your date of birth" value={{ myUser.profile.birth_date }}>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Upload new Profile picture</p>
+                                                <input class="form-control" name="profile_pic" id="image" type="file" accept="image/*">
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-10 m-t-20 p-b-5 b-b-default f-w-600">
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Old Password</p>
+                                                <input name="old_password" type="password" class="form-control" placeholder="old password" value="">
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-10 m-t-20 p-b-5 b-b-default f-w-600">
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">New Password</p>
+                                                <input name="new_password" type="password" class="form-control" placeholder="New password" value="">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Confirm New Password</p>
+                                                <input name="conf_new_password" type="password" class="form-control" placeholder="Confirm New Password" value="">
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-10 m-t-20 p-b-5 b-b-default f-w-600">
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-sm-6 ">
+                                            <button class="btn button_save">save</button>
+
+                                            <a href="{% url 'accounts:profile_view' pk=myUser.pk %}"  class="btn  button_cancel">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

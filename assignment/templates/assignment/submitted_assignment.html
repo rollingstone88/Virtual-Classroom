@@ -1,0 +1,21 @@
+<div class="post media">
+    <div class="media-body">
+        <strong>{{ submission.student.username }}</strong>
+        <h5 class="media-heading">
+            <time class="time">{{ submission.submission_time }}</time>
+        </h5>
+
+        <a href="/media/{{ submission.file }}" download >
+            <img src="/media/{{ submission.file }}" onerror="this.onerror=null; this.src='/static/images/pdf.png'" alt="" width="50" height="50">
+            Download
+        </a>
+         {% if submission.turn_in_status == 'late' %}
+        <p>turned in late</p>
+        {% else %}
+        <p>turned in</p>
+        {% endif %}
+        <div class="media-footer">
+
+        </div>
+    </div>
+</div>

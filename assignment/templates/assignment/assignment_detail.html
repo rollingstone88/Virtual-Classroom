@@ -1,0 +1,132 @@
+{% extends "assignment/assignment_base.html" %}
+
+{% block post_content %}
+    <link rel="stylesheet" href="/static/styles/assignment_article_details.css.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+
+    <div class="post media">
+        <div class="media-body">
+            <div class="container mt-5">
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-8">
+                        <div class="d-flex flex-column comment-section">
+                            <div class="bg-light p-2">
+                                <div class="d-flex flex-row user-info"><img class="rounded-circle"
+                                                                            src="/media/{{ assignment.creator.profile.profile_pic }}"
+                                                                            width="40">
+                                    <div class="d-flex flex-column justify-content-start ml-2">
+                                        <a href="{% url 'accounts:profile_view' pk=assignment.creator.pk %}">
+                                                <span class="d-block font-weight-bold name">
+                                                {{ assignment.creator.username }}
+                                                </span>
+                                        </a>
+                                        <span class="date text-black-50">{{ assignment.assign_time }}</span></div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="comment-text">
+                                        {{ assignment.description }}
+                                    </p>
+                                </div>
+                                <div class="media-footer">
+                                    {% if user.is_authenticated and user_role_in_classroom == 'student' %}
+                                        {% if user_submitted %}
+                                            <a href="/media/{{ submission.file }}" download>
+                                                <img src="/media/{{ submission.file }}"
+                                                     onerror="this.onerror=null; this.src='/static/images/pdf.png'"
+                                                     alt=""
+                                                     width="50"
+                                                     height="50">
+                                                Download
+                                            </a>
+                                            {% if submission.turn_in_status == 'late' %}
+                                                <p>turned in late</p>
+                                            {% else %}
+                                                <p>turned in</p>
+                                            {% endif %}
+                                            <a href="{% url 'assignment:unsubmit' slug=assignment.classroom.slug pk=assignment.pk %}"
+                                               class="btn btn-lg btn-fill">
+
+                                                <span class="glyphicon btn-primary"></span>Unsubmit</a>
+                                        {% else %}
+                                            <a href="{% url 'assignment:submit' slug=assignment.classroom.slug pk=assignment.pk %}"
+                                               class="btn btn-lg btn-fill"><span
+                                                    class="glyphicon glyphicon-plus-sign"></span>Submit Assignment</a>
+                                        {% endif %}
+                                    {% endif %}
+                                <br>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% for comment in comments %}
+                {% if assignment == comment.assignment %}
+
+                    <div class="container mt-1">
+                        <div class="d-flex justify-content-center row">
+                            <div class="col-md-8">
+                                <div class="d-flex flex-column comment-section">
+                                    <div class="bg-white p-2">
+                                        <div class="d-flex flex-row user-info">
+                                            <img class="rounded-circle"
+                                                 src="/media/{{ comment.student.profile.profile_pic }}"
+                                                 width="40" height=auto>
+                                            <div class="d-flex flex-column justify-content-start ml-2">
+                                                <a href="{% url 'accounts:profile_view' pk=comment.student.pk %}">
+                                                <span class="d-block font-weight-bold name">
+                                                {{ comment.student }}
+                                                </span>
+                                                </a>
+                                                <span class="date text-black-50">{{ comment.comment_time }}</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 m-lg-3">
+                                            <p class="comment-text">
+                                                {{ comment.comment_text }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+
+
+            <form action="{% url 'assignment:add_comment' pk=assignment.pk %}" method="post">
+                {% csrf_token %}
+                <div class="container mt-1">
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-md-8">
+                            <div class="d-flex flex-column comment-section">
+
+                                <div class="bg-light p-2">
+                                    <div class="d-flex flex-row align-items-start">
+                                        <img class="rounded-circle"
+                                             src="/media/{{ user.profile.profile_pic }}"
+                                             width="40">
+                                        <input name="comment" class="form-control ml-1 shadow-none textarea" value="">
+
+                                    </div>
+                                    <div class="mt-2 text-right">
+                                        <input type="submit" value="Comment" class="btn btn-primary btn-sm shadow-none">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+{% endblock %}

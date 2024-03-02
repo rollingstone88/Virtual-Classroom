@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    <link rel="stylesheet" href="/static/styles/main.css">
+{% block content %}
+
+    <main>
+        <section id="form-container">
+            <div id="welcome-message">
+                <h1>Welcome to Virtual Classroom</h1>
+                <p>An online classroom platform!</p>
+                <p>Give your classroom code</p>
+            </div>
+
+            <form action="/join/" id="form" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                <div class="field-wrapper">
+                    <label>Classroom code:</label>
+                    <input type="text" name="classroom_code" placeholder="Enter classroom code..."/>
+
+                    <input class="button_save" type="submit">
+                </div>
+            </form>
+        </section>
+    </main>
+
+
+{% endblock content %}

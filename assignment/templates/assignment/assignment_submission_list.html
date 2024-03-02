@@ -1,0 +1,9 @@
+{% extends "assignment/assignment_base.html" %}
+{% block post_content %}
+    <div class="col-md-8">
+
+        {% for submission in submission_list %}
+            {% include "assignment/submitted_assignment.html" %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "classroom/classroom_base.html" %}
+
+{% block pregroup %}
+    <div class="col-md-4">
+        <div class="content">
+            {% if user.is_authenticated %}
+                <h2>
+                    Welcome back
+                    <a href="#">{{ user.username }}</a>
+                </h2>
+
+            {% endif %}
+            <h2>Your Classrooms</h2>
+        </div>
+    </div>
+{% endblock %}
+
+{% block group_content %}
+    <div class="col-md-8">
+        <div class="list-group">
+            {% for member_classroom in object_list %}
+                {% if user in member_classroom.members.all %}
+                    <a class="list-group-item" href="{% url 'classroom:single' slug=member_classroom.slug %}">
+                        <h3 class="title list-group-item-heading">{{ member_classroom.name }}</h3>
+                        <div class="list-group-item-text container-fluid">
+                            {{ member_classroom.course_html|safe }}
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <span class="badge">{{ member_classroom.members.count }}</span>
+                                    member{{ member_classroom.members.count|pluralize }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

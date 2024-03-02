@@ -1,0 +1,25 @@
+{% load static %}
+    <link rel="stylesheet" href="/static/styles/hamburger.css">
+<input type="checkbox" id="check">
+<label for="check">
+    <i id="btn"><img src="/static/images/hamburger.png" height="20" width=auto></i>
+    <i id="cancel"><img src="/static/images/close.png" height="15" width=auto></i>
+</label>
+<div class="sidebar">
+    <header>
+        Dashboard
+    </header>
+    <ul>
+        <ul>
+            <li><a href="{% url 'assignment:create' code=classroom.code slug=classroom.slug %}">Post Assignment</a></li>
+            <li><a href="{% url 'exam:create_exam' code=classroom.code slug=classroom.slug %}">Create Exam</a></li>
+            <li><a href="{% url 'exam:addquestionpaper' code=classroom.code slug=classroom.slug %}">Add Question Paper</a></li>
+            <li><a href="{% url 'exam:addquestion' code=classroom.code slug=classroom.slug %}">Add Questions</a></li>
+            <li><a href="{% url 'exam:teacher-previous' code=classroom.code %}">View Previous Exams</a></li>
+            <li><a href="{% url 'exam:teacher-student' code=classroom.code %}">Students</a></li>
+            <li><a href="{% url 'exam:teacher_view_result' code=classroom.code %}">Results</a></li>
+
+        </ul>
+
+    </ul>
+</div>

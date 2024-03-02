@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <link rel="stylesheet" href="/static/styles/Assignments_list.css">
+    <h1>Pending Articles:</h1>
+    {% for article in articles %}
+        {% if article.classroom.code == classroom_code and article.is_accepted == False %}
+            <a href="{% url 'article:update' slug=article.classroom.slug pk=article.pk %}">
+                <li class="list-group-item d-flex justify-content-between align-content-center">
+                    <div class="d-flex flex-row">
+                        <div class="ml-2">
+                            <img src="/static/images/article_2.png" width="40" height=auto/>
+                            <span class="btn btn-lg btn-fill"><h2>{{ article.title }}</h2></span>
+                        </div>
+                        <div>
+                            <p>by {{ article.creator }}</p>
+                        </div>
+                        <div>
+                            <p>{{ article.assign_time }}</p>
+                        </div>
+                    </div>
+
+                </li>
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,35 @@
+<div class="container d-flex justify-content-center">
+
+    <a href="{% url 'assignment:single' slug=assignment.classroom.slug pk=assignment.pk %}">
+        <li class="list-group-item d-flex justify-content-between align-content-center">
+            <div class="d-flex flex-row">
+                <div class="ml-2">
+                    <img src="/static/images/assignment_2.png" width="40" height=auto/>
+                     <span class="btn btn-lg btn-fill"><h2>{{ assignment.title }}</h2></span>
+                </div>
+                <time class="time ml-5 btn">{{ assignment.assign_time }}</time>
+            </div>
+            <div class="media-footer">
+                {% if user.is_authenticated and not hide_delete %}
+                    {% if user_role_in_classroom == 'teacher' %}
+                        <a href="{% url 'assignment:delete' slug=assignment.classroom.slug pk=assignment.pk %}"
+                           title="delete"
+                           class="btn btn-simple">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                            <span class="text-danger icon-label">Delete</span>
+                        </a>
+                        <a href="{% url 'assignment:update' pk=assignment.pk slug=assignment.classroom.slug %}"
+                           class="btn btn-lg btn-fill"><span
+                                class="glyphicon "></span>Update</a>
+
+                        <a href="{% url 'assignment:view' pk=assignment.pk %}" class="btn btn-lg btn-fill"><span
+                                class="glyphicon "></span>View Submissions</a>
+
+                    {% endif %}
+                {% endif %}
+            </div>
+        </li>
+    </a>
+</div>
+
+

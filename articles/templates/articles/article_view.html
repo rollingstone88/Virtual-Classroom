@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <script>
+        let slug = url => new URL(url).pathname.match(/[^\/]+/g)
+        let current_slug = slug(window.location.href)
+        let c_slug = current_slug[2]
+        document.getElementById("slug").hidden = c_slug
+        console.log(c_slug)
+    </script>
+
+    <link rel="stylesheet" href="/static/styles/assignment_article_details.css.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+
+    <div class="post media">
+        <div class="media-body">
+            <div class="container mt-5">
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-8">
+                        <div class="d-flex flex-column comment-section">
+                            <div class="bg-light p-2">
+                                <div class="d-flex flex-row user-info"><img class="rounded-circle"
+                                                                            src="/media/{{ article.creator.profile.profile_pic }}"
+                                                                            width="40">
+                                    <div class="d-flex flex-column justify-content-start ml-2">
+                                        <a href="{% url 'accounts:profile_view' pk=article.creator.pk %}">
+                                                <span class="d-block font-weight-bold name">
+                                                {{ article.creator.username }}
+                                                </span>
+                                        </a>
+                                        <span class="date text-black-50">{{ article.assign_time }}</span></div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="comment-text">
+                                        {{ article.description }}
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% for comment in comments %}
+                {% if article == comment.article %}
+
+                    <div class="container mt-2">
+                        <div class="d-flex justify-content-center row">
+                            <div class="col-md-8">
+                                <div class="d-flex flex-column comment-section">
+                                    <div class="bg-white m-lg-2">
+                                        <div class="d-flex flex-row user-info">
+                                            <img class="rounded-circle"
+                                                 src="/media/{{ comment.student.profile.profile_pic }}"
+                                                 width="40">
+                                            <div class="d-flex flex-column justify-content-start ml-2">
+                                                <a href="{% url 'accounts:profile_view' pk=comment.student.pk %}">
+                                                <span class="d-block font-weight-bold name">
+                                                {{ comment.student }}
+                                                </span>
+                                                </a>
+                                                <span class="date text-black-50">{{ comment.comment_time }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <p class="comment-text">
+                                                {{ comment.comment_text }}
+                                            </p>
+                                        </div>
+                                        <div class="mt-1">
+                                            {% if comment.comment_image %}
+                                                <img src="/media/{{ comment.comment_image }}" width="200" height=auto>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+
+
+            <form action="{% url 'article:add_comment' pk=article.pk %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="container mt-1">
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-md-8">
+                            <div class="d-flex flex-column comment-section">
+
+                                <div class="bg-light p-2">
+                                    <div class="d-flex flex-row align-items-start">
+                                        <img class="rounded-circle"
+                                             src="/media/{{ user.profile.profile_pic }}"
+                                             width="40">
+                                        <input name="comment" class="form-control ml-1 shadow-none textarea" value="">
+                                        <input name="image" id="image" type="file" accept="image/*" class="form-control">
+                                    </div>
+                                    <div class="mt-2 text-right">
+                                        <input type="submit" value="Comment" class="btn btn-primary btn-sm shadow-none">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+{% endblock %}

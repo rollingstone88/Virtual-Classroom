@@ -1,0 +1,9 @@
+{% extends "assignment/assignment_base.html" %}
+{% block post_content %}
+
+<div class="col-md-8">
+	{% for assignment in assignment_list %}
+  {% include "assignment/_assignment.html" %}
+	{% endfor %}
+</div>
+{% endblock %}

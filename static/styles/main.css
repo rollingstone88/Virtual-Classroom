@@ -1,0 +1,243 @@
+/* ------------------  Global Styling ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+
+:root {
+    --shaddow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    background-color: rgba(232, 233, 239, 1);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* ------------------  Register Page ------------------ */
+
+#form-container {
+    width: 400px;
+    box-shadow: var(--shaddow);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#logo {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+
+#welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#welcome-message h1 {
+    font-size: 30px;
+}
+
+
+#welcome-message p {
+    font-size: 16px;
+    color: rgb(97, 98, 105);
+    font-weight: 300;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    font-size: 16px;
+    line-height: 1.7em;
+}
+
+.form-field button {
+    width: 100%;
+    border: 2px solid rgba(198, 202, 219, 1);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-field button[type='button'] {
+    background-color: rgb(75, 93, 172);
+    border: 2px solid rgba(198, 202, 219, 1);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 450px) {
+    #form-container {
+        width: 95%;
+
+    }
+
+    #welcome-message h1 {
+        font-size: 24px;
+    }
+
+}
+
+
+/* ----------------- Room Styling ------------------*/
+#room-name-wrapper {
+    text-align: center;
+    font-size: 18px;
+}
+
+#video-streams {
+    display: flex;
+    flex-wrap: wrap;
+    height: 85vh;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.video-container {
+    flex-basis: 500px;
+    flex-grow: 1;
+    max-height: 100%;
+    min-height: 350px;
+    border: 1px solid rgb(75, 93, 172);
+    border-radius: 5px;
+    margin: 2px;
+    background-color: rgba(198, 202, 219, 1);
+    position: relative;
+}
+
+.video-player {
+    height: 100%;
+    width: 100%;
+}
+
+.video-player > * {
+    border-radius: 5px;
+}
+
+.username-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1650px) {
+    .video-container {
+        flex-basis: 300px;
+        min-height: 200px;
+    }
+}
+
+
+/* ----------------- Room Styling | Controls ------------------*/
+
+#controls-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 1em;
+    position: fixed;
+    bottom: 20px;
+}
+
+.control-icon {
+    height: 20px;
+    width: 20px;
+    box-shadow: var(--shaddow);
+    background-color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.leave-btn {
+    background-color: #ff1919; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.leave-btn:hover {
+    background-color: #e40000;;
+}
+
+
+/*drop down in classroom */
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
+img[href$='.pdf'] {
+    display: inline-block;
+    line-height: 50px; /* check your icon height */
+    padding-right: 50px;
+    background: transparent url(/static/images/pdf.png) center right no-repeat;
+}

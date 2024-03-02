@@ -1,0 +1,25 @@
+<div class="post media">
+    <div class="media-body">
+        <strong>{{ article.creator.username }}</strong>
+        <h5 class="media-heading">
+            <time class="time"><a href="#">{{ article.assign_time }}</a></time>
+            {% if article.classroom %}
+                <span class="classroom-name">in <a href="#">{{ article.classroom.name }}</a></span>
+            {% endif %}
+            <h2 class="classroom-name"> {{ article.description }}</h2>
+        </h5>
+
+        <div class="media-footer">
+            {% if user.is_authenticated and not hide_delete %}
+                {% if user_role_in_classroom == 'tearche' %}
+                    <a href="{% url 'articles:delete' slug=article.classroom.slug pk=article.pk%}"
+                       title="delete"
+                       class="btn btn-simple">
+                        <span class="glyphicon glyphicon-remove text-danger"></span>
+                        <span class="text-danger icon-label">Delete</span>
+                    </a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

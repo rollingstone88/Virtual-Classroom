@@ -1,0 +1,124 @@
+{% extends "classroom/classroom_base.html" %}
+
+{% block pregroup %}
+    <!-- -->
+    <link rel="stylesheet" href="/static/styles/classroom_details.css">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-3">
+                    <ul class="list list-inline ">
+                        <div class="container mt-5">
+                            <div class="d-flex flex-row">
+                                <div class="col-md-12">
+                                    <div class="mt-3">
+                                        <li class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <div class="ml-2">
+                                                    <h1 class="title-list-group-item-heading">{{ classroom.name }}</h1>
+
+                                                    <h4> Classroom joining code: {{ classroom.code }}</h4>
+                                                <br><br>
+                                                    {% if user in classroom.members.all %}
+                                                        <div class="dropdown">
+                                                            <button class="dropbtn">Members</button>
+                                                            <div class="dropdown-content">
+                                                                {% if user.is_authenticated %}
+                                                                    {% if user in classroom.members.all %}
+                                                                        {% for member in classroom.members.all %}
+                                                                            <a href="{% url 'accounts:profile_view' pk=member.pk %}"
+                                                                               class="btn btn-lg btn-fill "> {{ member.username }}</a>
+                                                                        {% endfor %}
+                                                                    {% endif %}
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown">
+                                                            <button class="dropbtn">Article</button>
+                                                            <div class="dropdown-content">
+                                                                {% if user_role_in_classroom == "teacher" %}
+                                                                    <a href="{% url 'article:pending_articles' code=classroom.code slug=classroom.slug name=classroom.name %}"
+                                                                       class="btn btn-lg btn-fill "> Pending
+                                                                        Articles</a>
+                                                                {% endif %}
+                                                                {% if user_role_in_classroom != "teacher" %}
+                                                                    <a href="{% url 'article:create' code=classroom.code slug=classroom.slug name=classroom.name %}"
+                                                                       class="btn btn-lg btn-fill "> Post Article</a>
+                                                                {% endif %}
+                                                                <a href="{% url 'article:articles' code=classroom.code slug=classroom.slug name=classroom.name %}"
+                                                                   methods="post"
+                                                                   class="btn btn-lg btn-fill ">Articles</a>
+                                                                <a href="{% url 'article:my_articles' code=classroom.code slug=classroom.slug name=classroom.name %}"
+                                                                   methods="post" class="btn btn-lg btn-fill ">My
+                                                                    Articles</a>
+                                                            </div>
+                                                        </div>
+                                                        <a href="/lobby?greeting={{ classroom.name }}">
+                                                            <button class="button">
+                                                                Channels
+                                                            </button>
+                                                        </a>
+                                                        <a href="{% url 'classroom:leave' slug=classroom.slug %} ">
+                                                            <button class="leave-btn">
+                                                                Leave
+                                                            </button>
+                                                        </a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container mt-5">
+
+        {% if user_role_in_classroom == "teacher" %}
+            {% include "teacher_hamburger.html" %}
+        {% else %}
+            {% include "student_hamburger.html" %}
+        {% endif %}
+
+
+    </div>
+{% endblock %}
+
+
+
+{% block group_content %}
+
+    <link rel="stylesheet" href="/static/styles/Assignments_list.css">
+    <div class="col-md-8 container">
+        {% if classroom.assignments.count == 0 %}
+            <h2>No assignments in this classroom yet!</h2>
+        {% else %}
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mt-3">
+                            <ul class="list list-inline">
+                                {% for assignment in classroom.assignments.all %}
+                                    {% include "assignment/_assignment.html" %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        {% endif %}
+    </div>
+
+
+
+{% endblock %}

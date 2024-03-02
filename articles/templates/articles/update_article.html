@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <script>
+        let slug = url => new URL(url).pathname.match(/[^\/]+/g)
+        let current_slug = slug(window.location.href)
+        let c_slug = current_slug[2]
+        document.getElementById("slug").hidden = c_slug
+        console.log(c_slug)
+    </script>
+
+    <h1>Article:</h1>
+    <form action="{% url 'article:update_record' pk=article.pk %}" method="post">
+        {% csrf_token %}
+        Title:<br>
+        <input name="title" value="{{ article.title }}">
+        <br><br>
+        Description:<br>
+        <input name="description" value="{{ article.description }}">
+        <br><br>
+        <input type="submit" value="Accept" class="btn btn-success btn-large">
+        <a href="{% url 'article:delete' slug=article.classroom.slug pk=article.pk %}">
+            <span class="btn btn-danger btn-large">Reject</span>
+        </a>
+
+    </form>
+{% endblock %}
